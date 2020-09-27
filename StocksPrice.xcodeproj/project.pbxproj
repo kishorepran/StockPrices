@@ -3,11 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		39B537E26805B6353A9F661F /* Pods_StocksPrice_StocksPriceUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E6A562D0BE94EF322563CB6 /* Pods_StocksPrice_StocksPriceUITests.framework */; };
+		9B00736C2520414500FD7DF6 /* StocksPriceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B00736B2520414500FD7DF6 /* StocksPriceTableViewController.swift */; };
+		9B00736F2520416700FD7DF6 /* StocksPriceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B00736D2520416700FD7DF6 /* StocksPriceTableViewCell.swift */; };
+		9B0073702520416700FD7DF6 /* StocksPriceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B00736E2520416700FD7DF6 /* StocksPriceTableViewCell.xib */; };
 		9B7978D9252038E8000DF075 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7978D8252038E8000DF075 /* AppDelegate.swift */; };
 		9B7978DB252038E8000DF075 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7978DA252038E8000DF075 /* SceneDelegate.swift */; };
 		9B7978E0252038E8000DF075 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B7978DE252038E8000DF075 /* Main.storyboard */; };
@@ -15,7 +18,6 @@
 		9B7978E5252038EA000DF075 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B7978E3252038EA000DF075 /* LaunchScreen.storyboard */; };
 		9B7978F0252038EA000DF075 /* StocksPriceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7978EF252038EA000DF075 /* StocksPriceTests.swift */; };
 		9B7978FB252038EA000DF075 /* StocksPriceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7978FA252038EA000DF075 /* StocksPriceUITests.swift */; };
-		9B79790925203AA0000DF075 /* StocksPriceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B79790825203AA0000DF075 /* StocksPriceTableViewController.swift */; };
 		AEEDB402023B714BDFF1FD59 /* Pods_StocksPrice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CC44D495E6D88757D84E1DA /* Pods_StocksPrice.framework */; };
 		E34E3A6E95F329E566F3CD1A /* Pods_StocksPriceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2C2A642CE4C768CA6F82AC4 /* Pods_StocksPriceTests.framework */; };
 /* End PBXBuildFile section */
@@ -46,6 +48,9 @@
 		6CC44D495E6D88757D84E1DA /* Pods_StocksPrice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StocksPrice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		722C31D68A0F35E9DCBD0C57 /* Pods-StocksPriceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StocksPriceTests.release.xcconfig"; path = "Target Support Files/Pods-StocksPriceTests/Pods-StocksPriceTests.release.xcconfig"; sourceTree = "<group>"; };
 		8AD94F6B9860F0077657B711 /* Pods-StocksPrice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StocksPrice.release.xcconfig"; path = "Target Support Files/Pods-StocksPrice/Pods-StocksPrice.release.xcconfig"; sourceTree = "<group>"; };
+		9B00736B2520414500FD7DF6 /* StocksPriceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StocksPriceTableViewController.swift; sourceTree = "<group>"; };
+		9B00736D2520416700FD7DF6 /* StocksPriceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksPriceTableViewCell.swift; sourceTree = "<group>"; };
+		9B00736E2520416700FD7DF6 /* StocksPriceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StocksPriceTableViewCell.xib; sourceTree = "<group>"; };
 		9B7978D5252038E8000DF075 /* StocksPrice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StocksPrice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B7978D8252038E8000DF075 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B7978DA252038E8000DF075 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,7 +64,6 @@
 		9B7978F6252038EA000DF075 /* StocksPriceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StocksPriceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B7978FA252038EA000DF075 /* StocksPriceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksPriceUITests.swift; sourceTree = "<group>"; };
 		9B7978FC252038EA000DF075 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9B79790825203AA0000DF075 /* StocksPriceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksPriceTableViewController.swift; sourceTree = "<group>"; };
 		F2C2A642CE4C768CA6F82AC4 /* Pods_StocksPriceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StocksPriceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -101,6 +105,37 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9B0073672520414500FD7DF6 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		9B0073682520414500FD7DF6 /* viewmodel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = viewmodel;
+			sourceTree = "<group>";
+		};
+		9B0073692520414500FD7DF6 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				9B00736D2520416700FD7DF6 /* StocksPriceTableViewCell.swift */,
+				9B00736E2520416700FD7DF6 /* StocksPriceTableViewCell.xib */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		9B00736A2520414500FD7DF6 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				9B00736B2520414500FD7DF6 /* StocksPriceTableViewController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
 		9B7978CC252038E8000DF075 = {
 			isa = PBXGroup;
 			children = (
@@ -126,9 +161,12 @@
 		9B7978D7252038E8000DF075 /* StocksPrice */ = {
 			isa = PBXGroup;
 			children = (
+				9B00736A2520414500FD7DF6 /* controller */,
+				9B0073672520414500FD7DF6 /* model */,
+				9B0073692520414500FD7DF6 /* view */,
+				9B0073682520414500FD7DF6 /* viewmodel */,
 				9B7978D8252038E8000DF075 /* AppDelegate.swift */,
 				9B7978DA252038E8000DF075 /* SceneDelegate.swift */,
-				9B79790825203AA0000DF075 /* StocksPriceTableViewController.swift */,
 				9B7978DE252038E8000DF075 /* Main.storyboard */,
 				9B7978E1252038EA000DF075 /* Assets.xcassets */,
 				9B7978E3252038EA000DF075 /* LaunchScreen.storyboard */,
@@ -165,7 +203,6 @@
 				0A9F898B5AFF42D3B89BA146 /* Pods-StocksPriceTests.debug.xcconfig */,
 				722C31D68A0F35E9DCBD0C57 /* Pods-StocksPriceTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -280,6 +317,7 @@
 			files = (
 				9B7978E5252038EA000DF075 /* LaunchScreen.storyboard in Resources */,
 				9B7978E2252038EA000DF075 /* Assets.xcassets in Resources */,
+				9B0073702520416700FD7DF6 /* StocksPriceTableViewCell.xib in Resources */,
 				9B7978E0252038E8000DF075 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -410,7 +448,8 @@
 			files = (
 				9B7978D9252038E8000DF075 /* AppDelegate.swift in Sources */,
 				9B7978DB252038E8000DF075 /* SceneDelegate.swift in Sources */,
-				9B79790925203AA0000DF075 /* StocksPriceTableViewController.swift in Sources */,
+				9B00736F2520416700FD7DF6 /* StocksPriceTableViewCell.swift in Sources */,
+				9B00736C2520414500FD7DF6 /* StocksPriceTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
