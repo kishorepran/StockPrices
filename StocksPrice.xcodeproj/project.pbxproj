@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		9B7978D9252038E8000DF075 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7978D8252038E8000DF075 /* AppDelegate.swift */; };
 		9B7978DB252038E8000DF075 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7978DA252038E8000DF075 /* SceneDelegate.swift */; };
-		9B7978DD252038E8000DF075 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7978DC252038E8000DF075 /* ViewController.swift */; };
 		9B7978E0252038E8000DF075 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B7978DE252038E8000DF075 /* Main.storyboard */; };
 		9B7978E2252038EA000DF075 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B7978E1252038EA000DF075 /* Assets.xcassets */; };
 		9B7978E5252038EA000DF075 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B7978E3252038EA000DF075 /* LaunchScreen.storyboard */; };
 		9B7978F0252038EA000DF075 /* StocksPriceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7978EF252038EA000DF075 /* StocksPriceTests.swift */; };
 		9B7978FB252038EA000DF075 /* StocksPriceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7978FA252038EA000DF075 /* StocksPriceUITests.swift */; };
+		9B79790925203AA0000DF075 /* StocksPriceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B79790825203AA0000DF075 /* StocksPriceTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +38,6 @@
 		9B7978D5252038E8000DF075 /* StocksPrice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StocksPrice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B7978D8252038E8000DF075 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B7978DA252038E8000DF075 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9B7978DC252038E8000DF075 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9B7978DF252038E8000DF075 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9B7978E1252038EA000DF075 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9B7978E4252038EA000DF075 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +48,7 @@
 		9B7978F6252038EA000DF075 /* StocksPriceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StocksPriceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B7978FA252038EA000DF075 /* StocksPriceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksPriceUITests.swift; sourceTree = "<group>"; };
 		9B7978FC252038EA000DF075 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9B79790825203AA0000DF075 /* StocksPriceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksPriceTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,7 +101,7 @@
 			children = (
 				9B7978D8252038E8000DF075 /* AppDelegate.swift */,
 				9B7978DA252038E8000DF075 /* SceneDelegate.swift */,
-				9B7978DC252038E8000DF075 /* ViewController.swift */,
+				9B79790825203AA0000DF075 /* StocksPriceTableViewController.swift */,
 				9B7978DE252038E8000DF075 /* Main.storyboard */,
 				9B7978E1252038EA000DF075 /* Assets.xcassets */,
 				9B7978E3252038EA000DF075 /* LaunchScreen.storyboard */,
@@ -259,9 +259,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B7978DD252038E8000DF075 /* ViewController.swift in Sources */,
 				9B7978D9252038E8000DF075 /* AppDelegate.swift in Sources */,
 				9B7978DB252038E8000DF075 /* SceneDelegate.swift in Sources */,
+				9B79790925203AA0000DF075 /* StocksPriceTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
