@@ -1,0 +1,32 @@
+PODS:
+  - Alamofire (5.2.2)
+  - MBProgressHUD (1.2.0)
+  - Reusable (4.1.1):
+    - Reusable/Storyboard (= 4.1.1)
+    - Reusable/View (= 4.1.1)
+  - Reusable/Storyboard (4.1.1)
+  - Reusable/View (4.1.1)
+  - SwiftLint (0.40.3)
+
+DEPENDENCIES:
+  - Alamofire (~> 5.2)
+  - MBProgressHUD (~> 1.2.0)
+  - Reusable
+  - SwiftLint
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - MBProgressHUD
+    - Reusable
+    - SwiftLint
+
+SPEC CHECKSUMS:
+  Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
+  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
+  Reusable: 53a9acf5c536f229b31b5865782414b508252ddb
+  SwiftLint: dfd554ff0dff17288ee574814ccdd5cea85d76f7
+
+PODFILE CHECKSUM: b3e146f4c16997dbc41b5ea859fbee13b7170497
+
+COCOAPODS: 1.9.3
