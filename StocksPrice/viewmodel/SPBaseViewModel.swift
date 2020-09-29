@@ -10,7 +10,7 @@ import Foundation
 
 protocol ViewModelDelegate: class {
     func viewModelDidUpdate(sender: SPBaseViewModel)
-    func viewModelUpdateFailed(error: Error)
+    func viewModelUpdateFailed(error: SPError)
 }
 
 class SPBaseViewModel: NSObject {

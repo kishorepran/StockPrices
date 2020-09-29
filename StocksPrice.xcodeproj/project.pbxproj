@@ -15,6 +15,11 @@
 		9B2BB173252323430022B3C5 /* SPBaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2BB172252323430022B3C5 /* SPBaseViewModel.swift */; };
 		9B2BB175252323510022B3C5 /* SPViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2BB174252323510022B3C5 /* SPViewModel.swift */; };
 		9B2BB177252338C30022B3C5 /* FormatSelectorTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2BB176252338C30022B3C5 /* FormatSelectorTableHeaderView.swift */; };
+		9B2BB179252361FC0022B3C5 /* get-quotes.json in Resources */ = {isa = PBXBuildFile; fileRef = 9B2BB178252361FC0022B3C5 /* get-quotes.json */; };
+		9B2BB17B252365450022B3C5 /* StockQuoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2BB17A252365450022B3C5 /* StockQuoteModel.swift */; };
+		9B2BB17D25236AA80022B3C5 /* SPAPIServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2BB17C25236AA80022B3C5 /* SPAPIServices.swift */; };
+		9B2BB17F25236F700022B3C5 /* SPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2BB17E25236F700022B3C5 /* SPError.swift */; };
+		9B2BB181252373690022B3C5 /* StocksDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2BB180252373690022B3C5 /* StocksDataManager.swift */; };
 		9B7978D9252038E8000DF075 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7978D8252038E8000DF075 /* AppDelegate.swift */; };
 		9B7978DB252038E8000DF075 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7978DA252038E8000DF075 /* SceneDelegate.swift */; };
 		9B7978E0252038E8000DF075 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B7978DE252038E8000DF075 /* Main.storyboard */; };
@@ -59,6 +64,11 @@
 		9B2BB172252323430022B3C5 /* SPBaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPBaseViewModel.swift; sourceTree = "<group>"; };
 		9B2BB174252323510022B3C5 /* SPViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPViewModel.swift; sourceTree = "<group>"; };
 		9B2BB176252338C30022B3C5 /* FormatSelectorTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatSelectorTableHeaderView.swift; sourceTree = "<group>"; };
+		9B2BB178252361FC0022B3C5 /* get-quotes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "get-quotes.json"; sourceTree = "<group>"; };
+		9B2BB17A252365450022B3C5 /* StockQuoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockQuoteModel.swift; sourceTree = "<group>"; };
+		9B2BB17C25236AA80022B3C5 /* SPAPIServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPAPIServices.swift; sourceTree = "<group>"; };
+		9B2BB17E25236F700022B3C5 /* SPError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPError.swift; sourceTree = "<group>"; };
+		9B2BB180252373690022B3C5 /* StocksDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksDataManager.swift; sourceTree = "<group>"; };
 		9B7978D5252038E8000DF075 /* StocksPrice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StocksPrice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B7978D8252038E8000DF075 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B7978DA252038E8000DF075 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -116,7 +126,12 @@
 		9B0073672520414500FD7DF6 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				9B2BB17E25236F700022B3C5 /* SPError.swift */,
+				9B2BB178252361FC0022B3C5 /* get-quotes.json */,
 				9B0073712520462A00FD7DF6 /* StocksStyle.swift */,
+				9B2BB17A252365450022B3C5 /* StockQuoteModel.swift */,
+				9B2BB17C25236AA80022B3C5 /* SPAPIServices.swift */,
+				9B2BB180252373690022B3C5 /* StocksDataManager.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -328,6 +343,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B7978E5252038EA000DF075 /* LaunchScreen.storyboard in Resources */,
+				9B2BB179252361FC0022B3C5 /* get-quotes.json in Resources */,
 				9B7978E2252038EA000DF075 /* Assets.xcassets in Resources */,
 				9B0073702520416700FD7DF6 /* StocksPriceTableViewCell.xib in Resources */,
 				9B7978E0252038E8000DF075 /* Main.storyboard in Resources */,
@@ -461,9 +477,13 @@
 				9B7978D9252038E8000DF075 /* AppDelegate.swift in Sources */,
 				9B0073722520462A00FD7DF6 /* StocksStyle.swift in Sources */,
 				9B2BB175252323510022B3C5 /* SPViewModel.swift in Sources */,
+				9B2BB17B252365450022B3C5 /* StockQuoteModel.swift in Sources */,
 				9B7978DB252038E8000DF075 /* SceneDelegate.swift in Sources */,
+				9B2BB17F25236F700022B3C5 /* SPError.swift in Sources */,
+				9B2BB181252373690022B3C5 /* StocksDataManager.swift in Sources */,
 				9B2BB177252338C30022B3C5 /* FormatSelectorTableHeaderView.swift in Sources */,
 				9B00736F2520416700FD7DF6 /* StocksPriceTableViewCell.swift in Sources */,
+				9B2BB17D25236AA80022B3C5 /* SPAPIServices.swift in Sources */,
 				9B2BB173252323430022B3C5 /* SPBaseViewModel.swift in Sources */,
 				9B00736C2520414500FD7DF6 /* StocksPriceTableViewController.swift in Sources */,
 			);

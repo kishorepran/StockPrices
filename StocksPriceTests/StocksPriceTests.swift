@@ -10,25 +10,39 @@ import XCTest
 @testable import StocksPrice
 
 class StocksPriceTests: XCTestCase {
-
-    override func setUpWithError() throws {
+    var promise: XCTestExpectation!
+    let viewModel = SPViewModel()
+    
+    override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
 
-    override func tearDownWithError() throws {
+    override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testFetchQuotes() {
+        let expect = XCTestExpectation.init(description: "API Call for fetching quotes")
+        promise = expect
+        viewModel.delegate = self
+        viewModel.fetchQuotes()
+        wait(for: [expect], timeout: 10)
     }
+}
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+extension StocksPriceTests: ViewModelDelegate {
+    func viewModelDidUpdate(sender: SPBaseViewModel) {
+        if let model = sender as? SPViewModel, let list = model.listStock  {
+            promise.fulfill()
+            XCTAssert(!list.isEmpty)
+        } else {
+            XCTFail()
         }
     }
-
+    
+    func viewModelUpdateFailed(error: SPError) {
+        XCTFail(error.localizedMessage)
+    }
+    
+    
 }
