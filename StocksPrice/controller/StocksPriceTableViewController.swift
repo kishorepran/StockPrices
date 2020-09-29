@@ -19,6 +19,7 @@ class StocksPriceTableViewController: UITableViewController {
         tableView.register(FormatTableHeaderView.self, forHeaderFooterViewReuseIdentifier: FormatTableHeaderView.reuseIdentifer)
         tableView.estimatedSectionHeaderHeight = 60.0
         tableView.sectionHeaderHeight = UITableView.automaticDimension
+        viewModel.fetchQuotes()
     }
 
     // MARK: - Table view data source

@@ -11,7 +11,7 @@ import Foundation
 //MARK:- Route
 ///Keep adding routes here as we add more endpoints
 enum SPStocksQuoteRoute: String {
-    case getQuotes = "get-quotes"
+    case getQuotes = "market/v2/get-quotes"
 }
 
 public class SPStocksQuoteRouter: APIRouter {

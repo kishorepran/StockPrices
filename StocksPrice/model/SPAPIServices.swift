@@ -9,7 +9,7 @@
 import Alamofire
 import OHHTTPStubs
 struct APIConstants {
-    static let baseURL = "https://apidojo-yahoo-finance-v1.p.rapidapi.com/market/v2/"
+    static let baseURL = "https://apidojo-yahoo-finance-v1.p.rapidapi.com/"
     static let hostHeader = "apidojo-yahoo-finance-v1.p.rapidapi.com"
     static let apiKey =  "1862897498" // This is not the actual API key
 }
@@ -58,6 +58,9 @@ class SPAPIService: NSObject {
             print("Params \(params)")
         }
         #endif
+        if EnvironmentHandler.shared.mockAPI {
+            stub(condition: matcher, response: provider)
+        }
         //Response data is used as we don't want to parse data twice. i.e. once in Alamofire and one in codable class.
         AF.request(request).responseData { (responseObject) in
             if let data = responseObject.data, let _ = responseObject.value {
@@ -79,8 +82,8 @@ class SPAPIService: NSObject {
         }
     }
 }
+
 extension SPAPIService {
-    
     static func matcher(request: URLRequest) -> Bool {
         let target = APIConstants.baseURL.replacingOccurrences(of: "https:", with: "").replacingOccurrences(of: "/", with: "")
         return request.url?.host == target  // Let's match this request
@@ -91,7 +94,7 @@ extension SPAPIService {
         if let requestPath = request.url?.path, let name = requestPath.components(separatedBy: "/").last {
             fileName = "\(name).json"
         }
-        let stubPath = OHPathForFile(fileName, type(of: self))
+        let stubPath = OHPathForFileInBundle(fileName, Bundle.main)
         return fixture(filePath: stubPath!, headers: ["Content-Type": "application/json"])
     }
 }
