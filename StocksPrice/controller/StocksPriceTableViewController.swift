@@ -14,27 +14,39 @@ class StocksPriceTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
+        viewModel.delegate = self
+        viewModel.fetchQuotes()
+    }
+
+    func setupView() {
         title = "Stocks Chart"
         tableView.register(cellType: StocksPriceTableViewCell.self)
         tableView.register(FormatTableHeaderView.self, forHeaderFooterViewReuseIdentifier: FormatTableHeaderView.reuseIdentifer)
         tableView.estimatedSectionHeaderHeight = 60.0
         tableView.sectionHeaderHeight = UITableView.automaticDimension
-        viewModel.fetchQuotes()
     }
-
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 10
+        return viewModel.listStock?.count ?? 0
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(for: indexPath) as StocksPriceTableViewCell
-        cell.lblStockPostChange.attributedText = viewModel.attributedString(for: "-2.10%")
+        if let model = viewModel.listStock?[indexPath.row] {
+            configure(cell, with: model)
+        }
         return cell
     }
-
+    func configure(_ cell: StocksPriceTableViewCell, with model: Stock) {
+        cell.lblStockName.text = model.shortName
+        cell.lblStockCode.text = model.symbol
+        cell.lblStockPrice.text = model.price
+        cell.lblStockChange.text = model.percentChange
+        cell.lblStockPostChange.attributedText = viewModel.attributedString(for: model.postPercentChange)
+    }
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: FormatTableHeaderView.reuseIdentifer) as? FormatTableHeaderView else {
             return nil
@@ -51,4 +63,14 @@ class StocksPriceTableViewController: UITableViewController {
     }
     */
 
+}
+
+extension StocksPriceTableViewController: ViewModelDelegate {
+    func viewModelDidUpdate(sender: SPBaseViewModel) {
+        tableView.reloadData()
+    }
+    
+    func viewModelUpdateFailed(error: SPError) {
+        print(error.localizedMessage)
+    }
 }
