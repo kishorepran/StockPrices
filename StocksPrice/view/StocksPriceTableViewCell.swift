@@ -23,5 +23,12 @@ class StocksPriceTableViewCell: UITableViewCell, NibReusable {
     }
     private func setupStyle() {
         // Set up colors and font size
+        lblStockCode.apply(style: SPStyle.elementName)
+        lblStockName.apply(style: SPStyle.elementDescription)
+        lblStockPrice.apply(style: SPStyle.elementName)
+        lblStockChange.apply(style: SPStyle.elementMetaData)
+        lblStockChange.layer.cornerRadius = 2.0
+        lblStockChange.clipsToBounds = true
+        lblStockChange.backgroundColor = SPColorType.darkRed.color
     }
 }

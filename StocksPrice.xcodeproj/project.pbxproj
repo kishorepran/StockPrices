@@ -12,6 +12,8 @@
 		9B00736F2520416700FD7DF6 /* StocksPriceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B00736D2520416700FD7DF6 /* StocksPriceTableViewCell.swift */; };
 		9B0073702520416700FD7DF6 /* StocksPriceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B00736E2520416700FD7DF6 /* StocksPriceTableViewCell.xib */; };
 		9B0073722520462A00FD7DF6 /* StocksStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0073712520462A00FD7DF6 /* StocksStyle.swift */; };
+		9B2BB173252323430022B3C5 /* SPBaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2BB172252323430022B3C5 /* SPBaseViewModel.swift */; };
+		9B2BB175252323510022B3C5 /* SPViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2BB174252323510022B3C5 /* SPViewModel.swift */; };
 		9B7978D9252038E8000DF075 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7978D8252038E8000DF075 /* AppDelegate.swift */; };
 		9B7978DB252038E8000DF075 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7978DA252038E8000DF075 /* SceneDelegate.swift */; };
 		9B7978E0252038E8000DF075 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B7978DE252038E8000DF075 /* Main.storyboard */; };
@@ -53,6 +55,8 @@
 		9B00736D2520416700FD7DF6 /* StocksPriceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksPriceTableViewCell.swift; sourceTree = "<group>"; };
 		9B00736E2520416700FD7DF6 /* StocksPriceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StocksPriceTableViewCell.xib; sourceTree = "<group>"; };
 		9B0073712520462A00FD7DF6 /* StocksStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksStyle.swift; sourceTree = "<group>"; };
+		9B2BB172252323430022B3C5 /* SPBaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPBaseViewModel.swift; sourceTree = "<group>"; };
+		9B2BB174252323510022B3C5 /* SPViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPViewModel.swift; sourceTree = "<group>"; };
 		9B7978D5252038E8000DF075 /* StocksPrice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StocksPrice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B7978D8252038E8000DF075 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B7978DA252038E8000DF075 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -118,6 +122,8 @@
 		9B0073682520414500FD7DF6 /* viewmodel */ = {
 			isa = PBXGroup;
 			children = (
+				9B2BB172252323430022B3C5 /* SPBaseViewModel.swift */,
+				9B2BB174252323510022B3C5 /* SPViewModel.swift */,
 			);
 			path = viewmodel;
 			sourceTree = "<group>";
@@ -451,8 +457,10 @@
 			files = (
 				9B7978D9252038E8000DF075 /* AppDelegate.swift in Sources */,
 				9B0073722520462A00FD7DF6 /* StocksStyle.swift in Sources */,
+				9B2BB175252323510022B3C5 /* SPViewModel.swift in Sources */,
 				9B7978DB252038E8000DF075 /* SceneDelegate.swift in Sources */,
 				9B00736F2520416700FD7DF6 /* StocksPriceTableViewCell.swift in Sources */,
+				9B2BB173252323430022B3C5 /* SPBaseViewModel.swift in Sources */,
 				9B00736C2520414500FD7DF6 /* StocksPriceTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

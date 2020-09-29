@@ -25,12 +25,12 @@ public enum SPColorType: String {
 
     private func color(for description: SPColorType) -> UIColor {
         switch description {
-        case .lightGreen: return UIColor(red: 68.0/255.0, green: 157.0/255.0, blue: 92.0/255.0, alpha: 1.0)
-        case .darkGreen: return UIColor(red: 103.0/255.0, green: 172.0/255.0, blue: 135.0/255.0, alpha: 1.0)
+        case .lightGreen: return UIColor.systemGreen.withAlphaComponent(0.8)
+        case .darkGreen: return UIColor.systemGreen
         case .blackText: return UIColor(red: 18.0/255.0, green: 18.0/255.0, blue: 18.0/255.0, alpha: 1.0)
         case .lightBlackText: return UIColor(red: 106.0/255.0, green: 106.0/255.0, blue: 106.0/255.0, alpha: 1.0)
-        case .lightRed: return UIColor(red: 214.0/255.0, green: 44.0/255.0, blue: 50.0/255.0, alpha: 1.0)
-        case .darkRed: return UIColor(red: 171.0/255.0, green: 83.0/255.0, blue: 96.0/255.0, alpha: 1.0)
+        case .lightRed: return UIColor.systemRed.withAlphaComponent(0.8)
+        case .darkRed: return UIColor.systemRed
         case .white: return UIColor.white
         }
     }
@@ -134,14 +134,14 @@ open class SPStyle: CustomStringConvertible {
     }
 
     public static var elementName: SPStyle {
-        return SPStyle(fontType: .bold, sizeType: .compact, colorType: .blackText)
+        return SPStyle(fontType: .bold, sizeType: .medium, colorType: .blackText)
     }
     public static var elementDescription: SPStyle {
-        return SPStyle(fontType: .light, sizeType: .small, colorType: .lightBlackText)
+        return SPStyle(fontType: .regular, sizeType: .compact, colorType: .lightBlackText)
     }
 
     public static var elementMetaData: SPStyle {
-        return SPStyle(fontType: .regular, sizeType: .small, colorType: .white)
+        return SPStyle(fontType: .regular, sizeType: .compact, colorType: .white)
     }
 }
 
@@ -157,6 +157,14 @@ public extension NSAttributedString {
             .font: font ,
             .foregroundColor: textColor] )
         return attributedString
+    }
+
+}
+
+public extension UILabel {
+    func apply(style: SPStyle) {
+        font = style.font
+        textColor = style.colorType.color
     }
 
 }
