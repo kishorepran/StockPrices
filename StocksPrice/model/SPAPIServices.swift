@@ -7,7 +7,7 @@
 //
 
 import Alamofire
-
+import OHHTTPStubs
 struct APIConstants {
     static let baseURL = "https://apidojo-yahoo-finance-v1.p.rapidapi.com/market/v2/"
     static let hostHeader = "apidojo-yahoo-finance-v1.p.rapidapi.com"
@@ -77,5 +77,21 @@ class SPAPIService: NSObject {
                 failure(item)
             }
         }
+    }
+}
+extension SPAPIService {
+    
+    static func matcher(request: URLRequest) -> Bool {
+        let target = APIConstants.baseURL.replacingOccurrences(of: "https:", with: "").replacingOccurrences(of: "/", with: "")
+        return request.url?.host == target  // Let's match this request
+    }
+    static func provider(request: URLRequest) -> HTTPStubsResponse {
+        // Stub it with your stub file (which is in same bundle as self)
+        var fileName = ""
+        if let requestPath = request.url?.path, let name = requestPath.components(separatedBy: "/").last {
+            fileName = "\(name).json"
+        }
+        let stubPath = OHPathForFile(fileName, type(of: self))
+        return fixture(filePath: stubPath!, headers: ["Content-Type": "application/json"])
     }
 }

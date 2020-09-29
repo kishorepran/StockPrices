@@ -1,6 +1,19 @@
 PODS:
   - Alamofire (5.2.2)
   - MBProgressHUD (1.2.0)
+  - OHHTTPStubs/Core (9.0.0)
+  - OHHTTPStubs/Default (9.0.0):
+    - OHHTTPStubs/Core
+    - OHHTTPStubs/JSON
+    - OHHTTPStubs/NSURLSession
+    - OHHTTPStubs/OHPathHelpers
+  - OHHTTPStubs/JSON (9.0.0):
+    - OHHTTPStubs/Core
+  - OHHTTPStubs/NSURLSession (9.0.0):
+    - OHHTTPStubs/Core
+  - OHHTTPStubs/OHPathHelpers (9.0.0)
+  - OHHTTPStubs/Swift (9.0.0):
+    - OHHTTPStubs/Default
   - Reusable (4.1.1):
     - Reusable/Storyboard (= 4.1.1)
     - Reusable/View (= 4.1.1)
@@ -11,6 +24,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 5.2)
   - MBProgressHUD (~> 1.2.0)
+  - OHHTTPStubs/Swift
   - Reusable
   - SwiftLint
 
@@ -18,15 +32,17 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - MBProgressHUD
+    - OHHTTPStubs
     - Reusable
     - SwiftLint
 
 SPEC CHECKSUMS:
   Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
+  OHHTTPStubs: cb29d2a9d09a828ecb93349a2b0c64f99e0db89f
   Reusable: 53a9acf5c536f229b31b5865782414b508252ddb
   SwiftLint: dfd554ff0dff17288ee574814ccdd5cea85d76f7
 
-PODFILE CHECKSUM: b3e146f4c16997dbc41b5ea859fbee13b7170497
+PODFILE CHECKSUM: c00823103227d982b330c4a1a374cbc76de19836
 
 COCOAPODS: 1.9.3

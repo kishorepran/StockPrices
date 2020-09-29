@@ -10,6 +10,7 @@ target 'StocksPrice' do
     pod 'SwiftLint'
     pod 'MBProgressHUD', '~> 1.2.0'
     pod 'Alamofire', '~> 5.2'
+    pod 'OHHTTPStubs/Swift' # includes the Default subspec, with support for NSURLSession & JSON, and the Swiftier API wrappers
   target 'StocksPriceTests' do
     inherit! :search_paths
     # Pods for testing

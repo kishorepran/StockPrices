@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import OHHTTPStubs
 @testable import StocksPrice
 
 class StocksPriceTests: XCTestCase {

@@ -27,6 +27,7 @@
 		9B7978E5252038EA000DF075 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B7978E3252038EA000DF075 /* LaunchScreen.storyboard */; };
 		9B7978F0252038EA000DF075 /* StocksPriceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7978EF252038EA000DF075 /* StocksPriceTests.swift */; };
 		9B7978FB252038EA000DF075 /* StocksPriceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7978FA252038EA000DF075 /* StocksPriceUITests.swift */; };
+		9B7DD7542523878900D0880E /* EnvironmentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7DD7532523878900D0880E /* EnvironmentHandler.swift */; };
 		AEEDB402023B714BDFF1FD59 /* Pods_StocksPrice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CC44D495E6D88757D84E1DA /* Pods_StocksPrice.framework */; };
 		E34E3A6E95F329E566F3CD1A /* Pods_StocksPriceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2C2A642CE4C768CA6F82AC4 /* Pods_StocksPriceTests.framework */; };
 /* End PBXBuildFile section */
@@ -82,6 +83,7 @@
 		9B7978F6252038EA000DF075 /* StocksPriceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StocksPriceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B7978FA252038EA000DF075 /* StocksPriceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksPriceUITests.swift; sourceTree = "<group>"; };
 		9B7978FC252038EA000DF075 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9B7DD7532523878900D0880E /* EnvironmentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentHandler.swift; sourceTree = "<group>"; };
 		F2C2A642CE4C768CA6F82AC4 /* Pods_StocksPriceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StocksPriceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -132,6 +134,7 @@
 				9B2BB17A252365450022B3C5 /* StockQuoteModel.swift */,
 				9B2BB17C25236AA80022B3C5 /* SPAPIServices.swift */,
 				9B2BB180252373690022B3C5 /* StocksDataManager.swift */,
+				9B7DD7532523878900D0880E /* EnvironmentHandler.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -485,6 +488,7 @@
 				9B00736F2520416700FD7DF6 /* StocksPriceTableViewCell.swift in Sources */,
 				9B2BB17D25236AA80022B3C5 /* SPAPIServices.swift in Sources */,
 				9B2BB173252323430022B3C5 /* SPBaseViewModel.swift in Sources */,
+				9B7DD7542523878900D0880E /* EnvironmentHandler.swift in Sources */,
 				9B00736C2520414500FD7DF6 /* StocksPriceTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
