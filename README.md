@@ -42,7 +42,10 @@ Cocoapods : Yes
 ## TODO's
 
 1. More unit tests for better code coverage.
-2. UI tests.
+2. Negative unit tests to check edge cases.
 
 ## Courtesy:
 Padding label: https://github.com/levantAJ/PaddingLabel
+
+### FinishedScreen
+![](Sample-Screen-Project.png)
