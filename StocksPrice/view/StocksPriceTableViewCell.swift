@@ -13,7 +13,7 @@ class StocksPriceTableViewCell: UITableViewCell, NibReusable {
     @IBOutlet weak var lblStockCode: UILabel!
     @IBOutlet weak var lblStockName: UILabel!
     @IBOutlet weak var lblStockPrice: UILabel!
-    @IBOutlet weak var lblStockChange: UILabel!
+    @IBOutlet weak var lblStockChange: PaddingLabel!
     @IBOutlet weak var lblStockPostChange: UILabel!
     
     override func awakeFromNib() {
