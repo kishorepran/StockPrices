@@ -8,6 +8,10 @@
 
 import Foundation
 
+enum ChangeFormat: String, CaseIterable {
+    case percent
+    case value
+}
 // MARK: - StockQuote
 struct StockQuote: Codable {
     let quoteResponse: QuoteResponse

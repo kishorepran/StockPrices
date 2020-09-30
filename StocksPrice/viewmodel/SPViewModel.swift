@@ -10,8 +10,8 @@ import Foundation
 
 class SPViewModel: SPBaseViewModel {
     private let dataManager = StocksDataManager.shared
-    
-    public var listStock: [Stock]? {
+    var selectedChangeFormat = ChangeFormat.percent // Default to percent
+    var listStock: [Stock]? {
         didSet {
             delegate?.viewModelDidUpdate(sender: self)
         }
@@ -33,7 +33,16 @@ class SPViewModel: SPBaseViewModel {
             print(error)
         })
     }
-    
+    func postStockChange(at indexPath: IndexPath) -> NSAttributedString? {
+        guard let stock = listStock?[indexPath.row] else {return nil}
+        let finalValue = selectedChangeFormat == .percent ? stock.postPercentChange : stock.postValueChange
+        return attributedString(for: finalValue)
+    }
+    func stockChange(at indexPath: IndexPath) -> String? {
+        guard let stock = listStock?[indexPath.row] else {return nil}
+        let shouldShowPercent = selectedChangeFormat == .percent
+        return shouldShowPercent ? stock.percentChange : stock.valueChange
+    }
     func attributedString(for value: String) -> NSAttributedString {
         let greenStyle = SPStyle(fontType: .regular, sizeType: .compact, colorType: .lightGreen)
         let left = NSAttributedString.attributedString(text: "Post: ", style: SPStyle.elementDescription)

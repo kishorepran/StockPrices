@@ -8,13 +8,8 @@
 
 import UIKit
 
-enum ChangeFormat: String, CaseIterable {
-    case percent
-    case value
-}
-
 protocol FormatTableHeaderViewDelegate: class {
-    func didChange(to fomat: ChangeFormat)
+    func didChange(to format: ChangeFormat)
 }
 
 class FormatTableHeaderView: UITableViewHeaderFooterView {
@@ -33,7 +28,7 @@ class FormatTableHeaderView: UITableViewHeaderFooterView {
 
     func setup() {
         segmentControl.addTarget(self, action: #selector(segmentControl(_:)), for: .valueChanged)
-        segmentControl.selectedSegmentIndex = 0
+        segmentControl.selectedSegmentIndex = 0 // Default to percent
         contentView.backgroundColor = .white
         //Layout changes
         segmentControl.translatesAutoresizingMaskIntoConstraints = false

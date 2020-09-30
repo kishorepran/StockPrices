@@ -35,22 +35,22 @@ class StocksPriceTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(for: indexPath) as StocksPriceTableViewCell
-        if let model = viewModel.listStock?[indexPath.row] {
-            configure(cell, with: model)
-        }
+        configure(cell, at: indexPath)
         return cell
     }
-    func configure(_ cell: StocksPriceTableViewCell, with model: Stock) {
-        cell.lblStockName.text = model.shortName
-        cell.lblStockCode.text = model.symbol
-        cell.lblStockPrice.text = model.price
-        cell.lblStockChange.text = model.percentChange
-        cell.lblStockPostChange.attributedText = viewModel.attributedString(for: model.postPercentChange)
+    func configure(_ cell: StocksPriceTableViewCell, at index: IndexPath) {
+        let model = viewModel.listStock?[index.row]
+        cell.lblStockName.text = model?.shortName
+        cell.lblStockCode.text = model?.symbol
+        cell.lblStockPrice.text = model?.price
+        cell.lblStockChange.text = viewModel.stockChange(at: index)
+        cell.lblStockPostChange.attributedText = viewModel.postStockChange(at: index)
     }
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: FormatTableHeaderView.reuseIdentifer) as? FormatTableHeaderView else {
             return nil
         }
+        header.delegate = self
         return header
     }
     /*
@@ -64,7 +64,7 @@ class StocksPriceTableViewController: UITableViewController {
     */
 
 }
-
+// MARK: - ViewModelDelegate
 extension StocksPriceTableViewController: ViewModelDelegate {
     func viewModelDidUpdate(sender: SPBaseViewModel) {
         tableView.reloadData()
@@ -72,5 +72,12 @@ extension StocksPriceTableViewController: ViewModelDelegate {
     
     func viewModelUpdateFailed(error: SPError) {
         print(error.localizedMessage)
+    }
+}
+// MARK: - FormatTableHeaderViewDelegate
+extension StocksPriceTableViewController: FormatTableHeaderViewDelegate {
+    func didChange(to format: ChangeFormat) {
+        viewModel.selectedChangeFormat = format
+        tableView.reloadData()
     }
 }
