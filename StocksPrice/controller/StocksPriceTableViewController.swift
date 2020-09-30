@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import MBProgressHUD
 class StocksPriceTableViewController: UITableViewController {
 
     let viewModel = SPViewModel()
@@ -16,6 +16,7 @@ class StocksPriceTableViewController: UITableViewController {
         super.viewDidLoad()
         setupView()
         viewModel.delegate = self
+        MBProgressHUD.showAdded(to: view, animated: true)
         viewModel.fetchQuotes()
         setupRefreshControl()
     }
@@ -81,12 +82,13 @@ class StocksPriceTableViewController: UITableViewController {
 // MARK: - ViewModelDelegate
 extension StocksPriceTableViewController: ViewModelDelegate {
     func viewModelDidUpdate(sender: SPBaseViewModel) {
+        MBProgressHUD.hide(for: view, animated: true)
         tableView.reloadData()
         self.refreshControl?.endRefreshing()
     }
     
     func viewModelUpdateFailed(error: SPError) {
-        print(error.localizedMessage)
+        showAlert(for: error)
     }
 }
 // MARK: - FormatTableHeaderViewDelegate
