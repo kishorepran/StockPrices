@@ -22,6 +22,7 @@
 		9B2BB181252373690022B3C5 /* StocksDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2BB180252373690022B3C5 /* StocksDataManager.swift */; };
 		9B3FB5062524790B00EBE033 /* SPExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3FB5052524790B00EBE033 /* SPExtensions.swift */; };
 		9B3FB5082524B58D00EBE033 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3FB5072524B58D00EBE033 /* PaddingLabel.swift */; };
+		9B3FB50A2524F69600EBE033 /* BaseUITestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3FB5092524F69600EBE033 /* BaseUITestCase.swift */; };
 		9B7978D9252038E8000DF075 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7978D8252038E8000DF075 /* AppDelegate.swift */; };
 		9B7978DB252038E8000DF075 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7978DA252038E8000DF075 /* SceneDelegate.swift */; };
 		9B7978E0252038E8000DF075 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B7978DE252038E8000DF075 /* Main.storyboard */; };
@@ -74,6 +75,7 @@
 		9B2BB180252373690022B3C5 /* StocksDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksDataManager.swift; sourceTree = "<group>"; };
 		9B3FB5052524790B00EBE033 /* SPExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPExtensions.swift; sourceTree = "<group>"; };
 		9B3FB5072524B58D00EBE033 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
+		9B3FB5092524F69600EBE033 /* BaseUITestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUITestCase.swift; sourceTree = "<group>"; };
 		9B7978D5252038E8000DF075 /* StocksPrice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StocksPrice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B7978D8252038E8000DF075 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B7978DA252038E8000DF075 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 			children = (
 				9B7978FA252038EA000DF075 /* StocksPriceUITests.swift */,
 				9B7978FC252038EA000DF075 /* Info.plist */,
+				9B3FB5092524F69600EBE033 /* BaseUITestCase.swift */,
 			);
 			path = StocksPriceUITests;
 			sourceTree = "<group>";
@@ -513,6 +516,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B3FB50A2524F69600EBE033 /* BaseUITestCase.swift in Sources */,
 				9B7978FB252038EA000DF075 /* StocksPriceUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
