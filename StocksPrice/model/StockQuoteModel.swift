@@ -28,18 +28,6 @@ struct Stock: Codable {
     let regularMarketPrice, regularMarketChange, regularMarketChangePercent: Double
     let symbol, shortName, longName: String
     var price: String {
-        return "\(regularMarketPrice)"
-    }
-    var valueChange: String {
-        return "\(regularMarketChange)"
-    }
-    var percentChange: String {
-        return "\(regularMarketChangePercent)"
-    }
-    var postValueChange: String {
-        return "\(preMarketChange)"
-    }
-    var postPercentChange: String {
-        return "\(preMarketChangePercent)"
+        return String(format: "%.2f", regularMarketPrice)
     }
 }

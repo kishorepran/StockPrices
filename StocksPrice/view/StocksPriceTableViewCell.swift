@@ -29,6 +29,5 @@ class StocksPriceTableViewCell: UITableViewCell, NibReusable {
         lblStockChange.apply(style: SPStyle.elementMetaData)
         lblStockChange.layer.cornerRadius = 2.0
         lblStockChange.clipsToBounds = true
-        lblStockChange.backgroundColor = SPColorType.darkRed.color
     }
 }

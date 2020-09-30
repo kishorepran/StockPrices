@@ -49,6 +49,5 @@ class FormatTableHeaderView: UITableViewHeaderFooterView {
           default:
           break
        }
-        print("Did select segment")
     }
 }

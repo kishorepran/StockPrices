@@ -43,7 +43,9 @@ class StocksPriceTableViewController: UITableViewController {
         cell.lblStockName.text = model?.shortName
         cell.lblStockCode.text = model?.symbol
         cell.lblStockPrice.text = model?.price
-        cell.lblStockChange.text = viewModel.stockChange(at: index)
+        let result = viewModel.stockChange(at: index)
+        cell.lblStockChange.text = result.formattedValue
+        cell.lblStockChange.backgroundColor = result.colorType.color
         cell.lblStockPostChange.attributedText = viewModel.postStockChange(at: index)
     }
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
