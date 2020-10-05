@@ -24,7 +24,7 @@ class StocksPriceUITests: BaseUITestCase {
         //Tap the percent button and check if all the elements are still visible
         tablesQuery.buttons["percent"].tap()
         valueButton.tap()
-        
+
         let table = application.tables.element(boundBy: 0)
         let numberOfCells = table.cells.count
         XCTAssert(numberOfCells == 12) // Assert of all the 5 elements are visible

@@ -11,7 +11,7 @@ import MBProgressHUD
 class StocksPriceTableViewController: UITableViewController {
 
     let viewModel = SPViewModel()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
@@ -31,7 +31,7 @@ class StocksPriceTableViewController: UITableViewController {
     @objc private func refreshQuotesData(_ sender: Any) {
         viewModel.fetchQuotes()
     }
-    
+
     func setupView() {
         title = "Stocks Chart"
         tableView.register(cellType: StocksPriceTableViewCell.self)
@@ -45,7 +45,6 @@ class StocksPriceTableViewController: UITableViewController {
         return viewModel.listStock?.count ?? 0
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(for: indexPath) as StocksPriceTableViewCell
         configure(cell, at: indexPath)
@@ -86,7 +85,7 @@ extension StocksPriceTableViewController: ViewModelDelegate {
         tableView.reloadData()
         self.refreshControl?.endRefreshing()
     }
-    
+
     func viewModelUpdateFailed(error: SPError) {
         showAlert(for: error)
     }

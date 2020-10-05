@@ -13,7 +13,7 @@ import OHHTTPStubs
 class StocksPriceTests: XCTestCase {
     var promise: XCTestExpectation!
     let viewModel = SPViewModel()
-    
+
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
@@ -33,17 +33,16 @@ class StocksPriceTests: XCTestCase {
 
 extension StocksPriceTests: ViewModelDelegate {
     func viewModelDidUpdate(sender: SPBaseViewModel) {
-        if let model = sender as? SPViewModel, let list = model.listStock  {
+        if let model = sender as? SPViewModel, let list = model.listStock {
             promise.fulfill()
             XCTAssert(!list.isEmpty)
         } else {
             XCTFail()
         }
     }
-    
+
     func viewModelUpdateFailed(error: SPError) {
         XCTFail(error.localizedMessage)
     }
-    
-    
+
 }

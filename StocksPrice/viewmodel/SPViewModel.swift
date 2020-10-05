@@ -40,18 +40,18 @@ class SPViewModel: SPBaseViewModel {
         let style = SPStyle(fontType: .regular, sizeType: .compact, colorType: results.color)
         return attributedString(for: results.formattedString, with: style)
     }
-    
+
     func stockChange(at indexPath: IndexPath) -> (colorType: SPColorType, formattedValue: String?) {
         guard let stock = listStock?[indexPath.row] else {return (SPColorType.lightGreen, nil)}
         let results = changeValues(for: stock)
         return (results.color, results.formattedString)
     }
-    
+
     // MARK: - Data formatting helper methods
     private func color(for value: Double) -> SPColorType {
         return value >= 0.0 ? SPColorType.lightGreen : SPColorType.lightRed
     }
-    
+
     private func attributedString(for value: String, with style: SPStyle) -> NSAttributedString {
         let left = NSAttributedString.attributedString(text: "Post: ", style: SPStyle.elementDescription)
         let right = NSAttributedString.attributedString(text: value, style: style)
@@ -60,7 +60,7 @@ class SPViewModel: SPBaseViewModel {
         attributed.append(right)
         return attributed
     }
-    
+
     private func postChangevalues(for stock: Stock) -> (color: SPColorType, formattedString: String) {
         switch selectedChangeFormat {
         case .percent:
@@ -71,7 +71,7 @@ class SPViewModel: SPBaseViewModel {
             return (color(for: stock.preMarketChange), result)
         }
     }
-    
+
     private func changeValues(for stock: Stock) -> (color: SPColorType, formattedString: String) {
         switch selectedChangeFormat {
         case .percent:

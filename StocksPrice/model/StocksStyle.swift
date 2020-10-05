@@ -8,7 +8,7 @@
 
 import UIKit
 
-//MARK:- Color types
+// MARK: - Color types
 public enum SPColorType: String {
 
     case lightGreen // 68 157 92
@@ -36,7 +36,7 @@ public enum SPColorType: String {
     }
 }
 
-//MARK:- Font Size
+// MARK: - Font Size
 public enum SPSizeType: CGFloat, RawRepresentable, CustomStringConvertible {
 
     public typealias RawValue = CGFloat
@@ -79,7 +79,7 @@ public enum SPSizeType: CGFloat, RawRepresentable, CustomStringConvertible {
     }
 }
 
-//MARK:- Font Type
+// MARK: - Font Type
 public enum SPFontType: String, CustomStringConvertible {
 
     case light
@@ -111,7 +111,7 @@ public enum SPFontType: String, CustomStringConvertible {
     }
 }
 
-//MARK:- Style
+// MARK: - Style
 
 open class SPStyle: CustomStringConvertible {
 
@@ -145,7 +145,7 @@ open class SPStyle: CustomStringConvertible {
     }
 }
 
-//MARK:- Extentions
+// MARK: - Extentions
 
 public extension NSAttributedString {
 

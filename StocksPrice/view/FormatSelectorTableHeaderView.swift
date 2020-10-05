@@ -39,9 +39,9 @@ class FormatTableHeaderView: UITableViewHeaderFooterView {
         segmentControl.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: -32).isActive = true
         segmentControl.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: 32).isActive = true
     }
-    
+
     @objc func segmentControl(_ segmentedControl: UISegmentedControl) {
-       switch (segmentedControl.selectedSegmentIndex) {
+       switch segmentedControl.selectedSegmentIndex {
           case 0:
             delegate?.didChange(to: .percent)
           case 1:
