@@ -37,7 +37,7 @@ extension StocksPriceTests: ViewModelDelegate {
             promise.fulfill()
             XCTAssert(!list.isEmpty)
         } else {
-            XCTFail()
+            XCTFail("Unexpected error in services")
         }
     }
 

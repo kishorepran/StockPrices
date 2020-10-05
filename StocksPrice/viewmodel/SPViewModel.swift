@@ -63,23 +63,23 @@ class SPViewModel: SPBaseViewModel {
 
     private func postChangevalues(for stock: Stock) -> (color: SPColorType, formattedString: String) {
         switch selectedChangeFormat {
-        case .percent:
-            let result = String(format: "%.2f%%", stock.preMarketChangePercent)
-            return (color(for: stock.preMarketChangePercent), result)
+            case .percent:
+                let result = String(format: "%.2f%%", stock.preMarketChangePercent)
+                return (color(for: stock.preMarketChangePercent), result)
             case .value:
-            let result = String(format: "%.2f", stock.preMarketChange)
-            return (color(for: stock.preMarketChange), result)
+                let result = String(format: "%.2f", stock.preMarketChange)
+                return (color(for: stock.preMarketChange), result)
         }
     }
 
     private func changeValues(for stock: Stock) -> (color: SPColorType, formattedString: String) {
         switch selectedChangeFormat {
-        case .percent:
-            let result = String(format: "%.2f%%", stock.regularMarketChangePercent)
-            return (color(for: stock.regularMarketChangePercent), result)
+            case .percent:
+                let result = String(format: "%.2f%%", stock.regularMarketChangePercent)
+                return (color(for: stock.regularMarketChangePercent), result)
             case .value:
-            let result = String(format: "%.2f", stock.regularMarketChange)
-            return (color(for: stock.regularMarketChange), result)
+                let result = String(format: "%.2f", stock.regularMarketChange)
+                return (color(for: stock.regularMarketChange), result)
         }
     }
 }
