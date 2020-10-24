@@ -63,7 +63,7 @@ class SPAPIService: NSObject {
         }
         //Response data is used as we don't want to parse data twice. i.e. once in Alamofire and one in codable class.
         AF.request(request).responseData { (responseObject) in
-            if let data = responseObject.data, let _ = responseObject.value {
+            if let data = responseObject.data, responseObject.value != nil {
                 #if DEBUG
                     let json = String(decoding: data, as: UTF8.self)
                     print(json.debugDescription)

@@ -10,8 +10,8 @@ import XCTest
 import OHHTTPStubs
 @testable import StocksPrice
 
-class StocksPriceTests: XCTestCase {
-    var promise: XCTestExpectation!
+class StocksPriceTests: StockPriceBaseTests {
+
     let viewModel = SPViewModel()
 
     override func setUp() {
@@ -19,12 +19,24 @@ class StocksPriceTests: XCTestCase {
     }
 
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        super.tearDown()
     }
 
     func testFetchQuotes() {
+        stub(condition: matcher, response: provider)
         let expect = XCTestExpectation.init(description: "API Call for fetching quotes")
         promise = expect
+        viewModel.delegate = self
+        viewModel.fetchQuotes()
+        wait(for: [expect], timeout: 10)
+    }
+    // MARK: - Test JSON parsing error
+    func testFetchQuotesJSONError() {
+        stub(condition: matcher, response: errorProvider)
+        let expect = XCTestExpectation.init(description: "API Call for fetching quotes JSON error")
+        promise = expect
+        expectedError = "Internal error. Please try again later."
+        errorFile = "get-quotes-error"
         viewModel.delegate = self
         viewModel.fetchQuotes()
         wait(for: [expect], timeout: 10)
@@ -42,7 +54,12 @@ extension StocksPriceTests: ViewModelDelegate {
     }
 
     func viewModelUpdateFailed(error: SPError) {
-        XCTFail(error.localizedMessage)
+        if let expError = expectedError {
+            XCTAssert(error.localizedMessage == expError)
+            promise?.fulfill()
+        } else {
+            XCTFail(error.localizedMessage)
+        }
     }
 
 }
