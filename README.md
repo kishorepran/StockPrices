@@ -10,6 +10,7 @@ The app contains a a list of stock quotes which the user would need to see the p
 Xcode : 11.7
 SDK: iOS 13.7
 Cocoapods : Yes
+Architecture: MVVM
 3rd party libraries: 
 1. Reusable - To be able to reuse XIB's. https://github.com/AliSoftware/Reusable 
 2. SwiftLint - code quality check. https://github.com/realm/SwiftLint
@@ -37,7 +38,8 @@ Cocoapods : Yes
 2. Tutorial to get RAPID API keys. https://rapidapi.com/blog/how-to-use-the-yahoo-finance-api/
 3. Once we have the RAPID API keys. Heade over to file SPAPIServices.swift and at line 14 update your real API key.
 4. Select target > Edit Scheme > Run > Arguments > Environment Variables > Deslect Mock API. Now run the project to see live API call in action.
-
+5. Use source control to download the latest source code upto date with most recent commits. 
+6. Please run the project test suite from Xcode Menu > Product > Test to see the code coverage.
 
 ## TODO's
 
