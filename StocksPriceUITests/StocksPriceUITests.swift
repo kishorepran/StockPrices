@@ -29,6 +29,20 @@ class StocksPriceUITests: BaseUITestCase {
         let numberOfCells = table.cells.count
         XCTAssert(numberOfCells == 12) // Assert of all the 5 elements are visible
     }
+
+    func testPulltoRefreshTableView() throws {
+        let tablesQuery = application.tables
+
+        //Simulate pull to refresh
+        let firstCell = tablesQuery.cells.element(boundBy: 1)
+        let start = firstCell.coordinate(withNormalizedOffset: CGVector(dx: 0, dy: 0))
+        let finish = firstCell.coordinate(withNormalizedOffset: CGVector(dx: 0, dy: 50))
+        start.press(forDuration: 0, thenDragTo: finish)
+
+        let table = application.tables.element(boundBy: 0)
+        let numberOfCells = table.cells.count
+        XCTAssert(numberOfCells == 12) // Assert of all the 5 elements are visible
+    }
     func assertAllCellsareVisible() {
         let tablesQuery = application.tables
         //Take up first cell and assert if all the five elements are visible.
