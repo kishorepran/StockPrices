@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol ViewModelDelegate: class {
+protocol ViewModelDelegate: AnyObject {
     func viewModelDidUpdate(sender: SPBaseViewModel)
     func viewModelUpdateFailed(error: SPError)
 }

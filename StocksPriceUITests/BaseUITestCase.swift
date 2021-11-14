@@ -57,50 +57,50 @@ extension BaseUITestCase {
             XCTFail("Picture has no value")
         }
     }
-    
+
     func assertKeyboardIsVisible() {
         XCTAssertEqual(application.keyboards.count, 1)
     }
     func assertKeyboardIsNotVisible() {
         XCTAssertEqual(application.keyboards.count, 0)
     }
-    
+
     func adjustSliderto(_ amount: CGFloat) {
         application.sliders.element.adjust(toNormalizedSliderPosition: amount)
     }
-    
+
     // MARK: - Helper
     func waitForElementToAppear(_ element: AnyObject, timeout: TimeInterval = 20, message: String? = nil, file: String = #file, line: UInt = #line) {
         let existsPredicate = NSPredicate(format: "exists == true")
-        
+
         expectation(for: existsPredicate, evaluatedWith: element, handler: nil)
-        
+
         waitForExpectations(timeout: timeout) { (error) -> Void in
             if error != nil {
                 let msg = message ?? "Failed to find \(element) after \(timeout) seconds: \(String(describing: error))"
                 XCTFail(msg)
             }
         }
-        
+
         XCTAssert(element.exists)
     }
     func waitForElementToDisappear(_ element: AnyObject, timeout: TimeInterval = 5, file: String = #file, line: UInt = #line) {
         let existsPredicate = NSPredicate(format: "exists == false")
-        
+
         expectation(for: existsPredicate, evaluatedWith: element, handler: nil)
-        
+
         waitForExpectations(timeout: timeout) { (error) -> Void in
             if error != nil {
                 let message = "Failed to find \(element) after \(timeout) seconds: \(String(describing: error))"
                 XCTFail(message)
             }
         }
-        
+
         XCTAssertFalse(element.exists)
     }
     func waitForElement(_ element: AnyObject, toFulfillPredicate predicate: NSPredicate, timeout: TimeInterval = 5, file: String = #file, line: UInt = #line) {
         expectation(for: predicate, evaluatedWith: element, handler: nil)
-        
+
         waitForExpectations(timeout: timeout) { (error) -> Void in
             if error != nil {
                 let message = "Failed to find \(String(describing: element.debugDescription)) after \(timeout) seconds: \(String(describing: error))"

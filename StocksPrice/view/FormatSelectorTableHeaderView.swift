@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol FormatTableHeaderViewDelegate: class {
+protocol FormatTableHeaderViewDelegate: AnyObject {
     func didChange(to format: ChangeFormat)
 }
 
